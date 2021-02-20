@@ -14,6 +14,18 @@ services:
     networks:
       - app-network_wordpress
 
+  phpmyadmin:
+    depends_on:
+      - db
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    env_file: .env
+    ports:
+      - '8081:80'
+    environment:
+      PMA_HOST: db
+    networks:
+      - app-network_wordpress
 
   wordpress:
     depends_on:
@@ -30,6 +42,7 @@ services:
     volumes:
       - ./wordpress/html:/var/www/html
       - ./php-conf/php:/usr/local/etc/php
+      - ./php-conf/php-fpm.d/php-fpm.d:/usr/local/etc/php-fpm.d
     networks:
       - app-network_wordpress
     

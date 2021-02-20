@@ -525,10 +525,7 @@ class WP_RealEstate_Price {
 	 * @return string
 	 */
 	public static function currency_symbol( $currency = '' ) {
-		if ( ! $currency ) {
-			$currency = self::get_currency();
-		}
-
+		
 		$symbols = self::get_currency_symbols();
 
 		$currency_symbol = isset( $symbols[ $currency ] ) ? $symbols[ $currency ] : '';

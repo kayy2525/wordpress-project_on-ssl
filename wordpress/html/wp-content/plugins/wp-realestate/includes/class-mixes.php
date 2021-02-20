@@ -405,24 +405,25 @@ class WP_RealEstate_Mixes {
 	public static function get_properties_page_url() {
 		if ( is_post_type_archive('property') ) {
 			$url = get_post_type_archive_link( 'property' );
-        } elseif (is_tax()) {
-            $url = '';
-            $taxs = ['type', 'status', 'material', 'location', 'label', 'amenity'];
-            foreach ($taxs as $tax) {
-                if ( is_tax('property_'.$tax) ) {
-                    global $wp_query;
-                    $term = $wp_query->queried_object;
-                    if ( isset( $term->slug) ) {
-                        $url = get_term_link($term, 'property_'.$tax);
-                    }
-                }
-            }
+            } elseif (is_tax()) {
+                  $url = '';
+                  $taxs = ['type', 'status', 'material', 'location', 'label', 'amenity'];
+                  foreach ($taxs as $tax) {
+                      if ( is_tax('property_'.$tax) ) {
+                          global $wp_query;
+                          $term = $wp_query->queried_object;
+                          if ( isset( $term->slug) ) {
+                              $url = get_term_link($term, 'property_'.$tax);
+                          }
+                      }
+                  }
 		} else {
 			global $post;
 			if ( is_page() && is_object($post) && basename( get_page_template() ) == 'page-properties.php' ) {
 				$url = get_permalink($post->ID);
 			} else {
 				$properties_page_id = wp_realestate_get_option('properties_page_id');
+                        $properties_page_id = WP_RealEstate_WPML::get_icl_object_id($properties_page_id, 'page');
 				if ( $properties_page_id ) {
 					$url = get_permalink($properties_page_id);
 				} else {
@@ -437,23 +438,24 @@ class WP_RealEstate_Mixes {
 		if ( is_post_type_archive('agent') ) {
 			$url = get_post_type_archive_link( 'agent' );
 		} elseif (is_tax()) {
-            $url = '';
-            $taxs = ['category', 'location'];
-            foreach ($taxs as $tax) {
-                if ( is_tax('agent_'.$tax) ) {
-                    global $wp_query;
-                    $term = $wp_query->queried_object;
-                    if ( isset( $term->slug) ) {
-                        $url = get_term_link($term, 'agent_'.$tax);
-                    }
-                }
-            }
-        } else {
+                  $url = '';
+                  $taxs = ['category', 'location'];
+                  foreach ($taxs as $tax) {
+                      if ( is_tax('agent_'.$tax) ) {
+                          global $wp_query;
+                          $term = $wp_query->queried_object;
+                          if ( isset( $term->slug) ) {
+                              $url = get_term_link($term, 'agent_'.$tax);
+                          }
+                      }
+                  }
+              } else {
 			global $post;
 			if ( is_page() && is_object($post) && basename( get_page_template() ) == 'page-agents.php' ) {
 				$url = get_permalink($post->ID);
 			} else {
 				$agents_page_id = wp_realestate_get_option('agents_page_id');
+                        $agents_page_id = WP_RealEstate_WPML::get_icl_object_id($agents_page_id, 'page');
 				if ( $agents_page_id ) {
 					$url = get_permalink($agents_page_id);
 				} else {
@@ -484,12 +486,13 @@ class WP_RealEstate_Mixes {
             if ( is_page() && is_object($post) && basename( get_page_template() ) == 'page-agencies.php' ) {
                 $url = get_permalink($post->ID);
             } else {
-                $agencies_page_id = wp_realestate_get_option('agencies_page_id');
-                if ( $agencies_page_id ) {
-                    $url = get_permalink($agencies_page_id);
-                } else {
-                    $url = get_post_type_archive_link( 'agency' );
-                }
+                  $agencies_page_id = wp_realestate_get_option('agencies_page_id');
+                  $agencies_page_id = WP_RealEstate_WPML::get_icl_object_id($agencies_page_id, 'page');
+                  if ( $agencies_page_id ) {
+                        $url = get_permalink($agencies_page_id);
+                  } else {
+                        $url = get_post_type_archive_link( 'agency' );
+                  }
             }
         }
         return apply_filters( 'wp-realestate-get-agencies-page-url', $url );
