@@ -30,7 +30,11 @@ global $post;
             }
             ?>
             <?php get_template_part('template-parts/sharebox-property'); ?>
-            <?php homeo_property_print_btn($post); ?>
+            <?php
+            if ( homeo_get_config('property_enable_printer', true) ) {
+                homeo_property_print_btn($post);
+            }
+            ?>
 
             <?php homeo_property_display_price($post); ?>
         </div>

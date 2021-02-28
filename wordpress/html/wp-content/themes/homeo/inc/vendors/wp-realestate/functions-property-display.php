@@ -641,7 +641,7 @@ add_filter('wp-realestate-compare-field-value', 'homeo_property_compare_field_fe
 
 
 function homeo_property_print_btn($post, $show_title = false) {
-	if ( homeo_get_config('listing_enable_printer', true) ) {
+	if ( homeo_get_config('property_enable_printer', true) ) {
         ?>
         <a href="javascript:void(0);" class="btn-print-property" data-property_id="<?php echo esc_attr($post->ID); ?>" data-nonce="<?php echo esc_attr(wp_create_nonce( 'homeo-printer-property-nonce' )); ?>" data-toggle="tooltip" title="<?php esc_attr_e('Print', 'homeo'); ?>"><i class="flaticon-printer"></i>
         	<?php if ( $show_title ) { ?>

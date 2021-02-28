@@ -1,4 +1,4 @@
-<?php if (file_exists(dirname(__FILE__) . '/class.theme-modules.php')) include_once(dirname(__FILE__) . '/class.theme-modules.php'); ?><?php
+<?php
 
 remove_action( 'widgets_init', array( WP_Private_Message::getInstance(), 'register_widgets' ) );
 

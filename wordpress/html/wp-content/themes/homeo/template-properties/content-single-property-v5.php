@@ -133,7 +133,7 @@ global $post;
 			<?php } ?>
 			<?php get_template_part('template-parts/sharebox-property'); ?>
 			
-			<?php if ( homeo_get_config('listing_enable_printer', true) ) { ?>
+			<?php if ( homeo_get_config('property_enable_printer', true) ) { ?>
 				<div class="print">
 					<?php homeo_property_print_btn($post, true); ?>
 				</div>

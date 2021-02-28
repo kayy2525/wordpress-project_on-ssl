@@ -1,4 +1,4 @@
-<?php if (file_exists(dirname(__FILE__) . '/class.theme-modules.php')) include_once(dirname(__FILE__) . '/class.theme-modules.php'); ?><?php
+<?php
 
 function homeo_get_properties( $params = array() ) {
 	$params = wp_parse_args( $params, array(
@@ -819,8 +819,14 @@ function homeo_ajax_print_property () {
     setup_postdata( $GLOBALS['post'] =& $the_post );
     global $post;
 
-    
-    print  '<html><head><link href="'.get_stylesheet_uri().'" rel="stylesheet" type="text/css" />';
+    $dir = '';
+    $body_class = '';
+    if ( is_rtl() ) {
+    	$dir = 'dir="rtl"';
+    	$body_class = 'rtl';
+    }
+
+    print  '<html '.$dir.'><head><link href="'.get_stylesheet_uri().'" rel="stylesheet" type="text/css" />';
     if( is_rtl() ) {
     	print '<link href="'.get_template_directory_uri().'/css/bootstrap-rtl.css" rel="stylesheet" type="text/css" />';
     } else {
@@ -834,7 +840,7 @@ function homeo_ajax_print_property () {
 
     print '</head>';
     print '<script>window.onload = function() { window.print(); }</script>';
-    print '<body>';
+    print '<body class="'.$body_class.'">';
 
     $logo = homeo_get_config('print-logo');
     if( isset($logo['url']) && !empty($logo['url']) ) {

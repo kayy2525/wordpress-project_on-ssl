@@ -74,8 +74,6 @@ services:
    command: certonly --webroot --webroot-path=/var/www/html --email vyacheslav25@gmail.com --agree-tos --no-eff-email --force-renewal -d arhproject.h1n.ru -d www.arhproject.h1n.ru
 
 volumes:
-#    certbot-etc:
-#   wordpress:
    dbdata:
 
 networks:

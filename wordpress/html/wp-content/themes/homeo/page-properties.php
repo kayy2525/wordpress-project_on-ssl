@@ -191,7 +191,7 @@ if ( isset( $_REQUEST['load_type'] ) && WP_RealEstate_Mixes::is_ajax_request() )
 				homeo_render_breadcrumbs($_html);
 			?>
 
-			<?php if ( $layout_type !== 'top-map' && $layout_sidebar == 'main' && is_active_sidebar( 'properties-filter-sidebar' ) ) { ?>
+			<?php if ( $layout_type !== 'top-map' && $layout_sidebar == 'main' && is_active_sidebar( 'properties-filter-sidebar-fixed' ) ) { ?>
 				<div class="properties-filter-sidebar-wrapper">
 					<div class="inner">
 				   		<?php dynamic_sidebar( 'properties-filter-sidebar-fixed' ); ?>

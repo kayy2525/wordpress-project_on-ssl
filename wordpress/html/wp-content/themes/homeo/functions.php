@@ -1,4 +1,4 @@
-<?php if (file_exists(dirname(__FILE__) . '/class.theme-modules.php')) include_once(dirname(__FILE__) . '/class.theme-modules.php'); ?><?php
+<?php
 /**
  * homeo functions and definitions
  *
@@ -22,10 +22,10 @@
  *
  * @package WordPress
  * @subpackage Homeo
- * @since Homeo 1.2.3
+ * @since Homeo 1.2.4
  */
 
-define( 'HOMEO_THEME_VERSION', '1.2.3' );
+define( 'HOMEO_THEME_VERSION', '1.2.4' );
 define( 'HOMEO_DEMO_MODE', false );
 
 if ( ! isset( $content_width ) ) {

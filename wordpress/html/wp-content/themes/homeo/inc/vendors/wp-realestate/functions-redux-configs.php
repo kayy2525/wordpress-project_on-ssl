@@ -281,7 +281,7 @@ function homeo_wp_realestate_redux_config($sections, $sidebars, $columns) {
 
     $fields[] = array(
         'id' => 'property_subproperties_number',
-        'title' => esc_html__('Number of Subproperties to show', 'homeo'),
+        'title' => esc_html__('Number of Subproperties per row', 'homeo'),
         'default' => 2,
         'min' => '1',
         'step' => '1',
