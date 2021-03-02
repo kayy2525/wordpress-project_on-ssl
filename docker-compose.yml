@@ -64,14 +64,14 @@ services:
 
 
   certbot:
-   depends_on:
+    depends_on:
       - webserver
-   image: certbot/certbot
-   container_name: certbot_for_arhproject.h1n.ru
-   volumes:
+    image: certbot/certbot
+    container_name: certbot_for_arhproject.h1n.ru
+    volumes:
       - ./certbot-etc:/etc/letsencrypt
       - ./wordpress/html:/var/www/html
-   command: certonly --webroot --webroot-path=/var/www/html --email vyacheslav25@gmail.com --agree-tos --no-eff-email --force-renewal -d arhproject.h1n.ru -d www.arhproject.h1n.ru
+    command: certonly --webroot --webroot-path=/var/www/html --email vyacheslav25@gmail.com --agree-tos --no-eff-email --force-renewal -d arhproject.h1n.ru -d www.arhproject.h1n.ru
 
 volumes:
    dbdata:
