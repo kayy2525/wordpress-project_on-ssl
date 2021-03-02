@@ -6,14 +6,14 @@ wp_enqueue_script('select2');
 wp_enqueue_style('select2');
 ?>
 <div class="login-form-wrapper">
-	
+
 	<?php if ( defined('HOMEO_DEMO_MODE') && HOMEO_DEMO_MODE ) { ?>
 		<div class="sign-in-demo-notice">
 			Username: <strong>agency</strong> or <strong>agent</strong><br>
 			Password: <strong>demo</strong>
 		</div>
 	<?php } ?>
-	
+
 	<div id="login-form-wrapper" class="form-container box-white-dashboard form-login-register-inner">
 		<form class="login-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" method="post">
 			<?php do_action('login_form'); ?>
@@ -29,24 +29,10 @@ wp_enqueue_style('select2');
                 <sup class="required-field">*</sup>
 				<input name="password" type="password" class="password required form-control" id="login_password" placeholder="<?php esc_attr_e('Enter Password','homeo'); ?>">
 			</div>
-			<div class="row space-15">
-				<div class="col-sm-6">
-					<label for="user-remember-field">
-						<input type="checkbox" name="remember" id="user-remember-field" value="true"> <?php echo esc_html__('Keep me signed in','homeo'); ?>
-					</label>
-				</div>
-				<div class="col-sm-6 text-right">
-					<a href="#forgot-password-form-wrapper" class="back-link" title="<?php esc_attr_e('Forgot Password','homeo'); ?>"><?php echo esc_html__("Lost Your Password?",'homeo'); ?></a>
-				</div>
-			</div>
+
 			<div class="form-group no-margin">
 				<input type="submit" class="btn btn-theme btn-block" name="submit" value="<?php esc_attr_e('Login','homeo'); ?>"/>
-				<div class="register-info">
-					<?php esc_html_e('Don\'t you have an account?', 'homeo'); ?>
-					<a class="apus-user-register" href="#apus_register_form">
-	                    <?php esc_html_e('Register', 'homeo'); ?>
-	                </a>
-                </div>
+
 			</div>
 			<?php
 				wp_nonce_field('ajax-login-nonce', 'security_login');

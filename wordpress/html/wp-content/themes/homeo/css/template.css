@@ -5,12 +5,12 @@
 3. form
 4. layout
 5. menu
-6. pages 
+6. pages
 7. post
-8. effect 
+8. effect
 9. utilities
 10. widgets layout
-11. widgets 
+11. widgets
 12. responsive
 -------------------------------------------------------------------*/
 /**
@@ -10956,7 +10956,7 @@ blockquote:before {
   background: #24324a;
 }
 
-/* 
+/*
  *  Owl Carousel - Animate Plugin
  */
 .owl-carousel .animated {
@@ -10979,7 +10979,7 @@ blockquote:before {
   animation-name: fadeOut;
 }
 
-/* 
+/*
  * 	Owl Carousel - Auto Height Plugin
  */
 .owl-height {
@@ -11026,7 +11026,7 @@ blockquote:before {
   right: auto;
 }
 
-/* 
+/*
  *  Core Owl Carousel CSS File
  */
 .owl-carousel {
@@ -11236,7 +11236,7 @@ blockquote:before {
   display: block;
 }
 
-/* 
+/*
  * 	Owl Carousel - Lazy Load Plugin
  */
 .owl-carousel .owl-item .owl-lazy {
@@ -11248,7 +11248,7 @@ blockquote:before {
   transition: opacity 400ms ease;
 }
 
-/* 
+/*
  * 	Owl Carousel - Video Plugin
  */
 .owl-carousel .owl-video-wrapper {
@@ -15149,7 +15149,7 @@ a.btn-app .title-app {
 }
 
 /*-----------------------------*\
-        Widget Contact 
+        Widget Contact
 \*-----------------------------*/
 .widget-infor .heding {
   font-family: "Nunito", "Times New Roman", Times, serif;
@@ -16433,6 +16433,12 @@ a.btn-app .title-app {
   float: right;
 }
 .inner-social > div a.facebook-login-btn {
+  display: none !important;
+  border-color: #506dab;
+  color: #506dab;
+}
+.inner-social > div a.google-login-btn {
+  display: none !important;
   border-color: #506dab;
   color: #506dab;
 }
@@ -16440,6 +16446,7 @@ a.btn-app .title-app {
   background-color: #506dab;
 }
 .inner-social > div a.google-login-btn-wrapper {
+  display: none !important;
   border-color: #dd4b39;
   color: #dd4b39;
 }
@@ -16449,6 +16456,7 @@ a.btn-app .title-app {
 .inner-social .line-header {
   position: relative;
   color: #006c70;
+  display: none !important;
 }
 .inner-social .line-header:before {
   content: '';
@@ -17715,7 +17723,19 @@ a.btn-app .title-app {
   -webkit-transition: all 0.3s ease-in-out 0s;
   -o-transition: all 0.3s ease-in-out 0s;
   transition: all 0.3s ease-in-out 0s;
+	background-color: transparent;
+    background-image: linear-gradient( 
+180deg
+ , rgba(0, 0, 0, 0) 0%, #1D293E 100%);
 }
+.type-banner-property .info {
+	padding-bottom: 30px;
+	padding-top: 100px;
+    background-image: linear-gradient( 
+180deg
+ , rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+
 .type-banner-property.style1 {
   display: inline-block;
   border-radius: 50px;
@@ -17823,13 +17843,13 @@ a.btn-app .title-app {
   -moz-border-radius: 6px;
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
-  padding: 20px 15px;
+  padding: 120px 0px 0px;
   overflow: hidden;
   background-position: center center;
 }
 @media (min-width: 1200px) {
   .type-banner-property.style3 {
-    padding: 40px 20px 30px;
+    padding: 175px 0px 0px;
   }
 }
 .type-banner-property.style3 .icon {
@@ -18732,6 +18752,10 @@ a.btn-app .title-app {
 .property-grid .property-metas-bottom {
   border-top: 1px solid #ebebeb;
   padding: 10px 20px;
+}
+
+.property-metas-bottom {
+	display: none;
 }
 
 .property-grid-slider {

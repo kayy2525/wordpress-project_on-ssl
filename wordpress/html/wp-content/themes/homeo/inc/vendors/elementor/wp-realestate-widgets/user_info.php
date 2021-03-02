@@ -15,7 +15,7 @@ class Homeo_Elementor_User_Info extends Elementor\Widget_Base {
 	public function get_title() {
         return esc_html__( 'Apus Header User Info', 'homeo' );
     }
-    
+
 	public function get_categories() {
         return [ 'homeo-header-elements' ];
     }
@@ -78,7 +78,7 @@ class Homeo_Elementor_User_Info extends Elementor\Widget_Base {
                 ],
             ]
         );
-        
+
         $this->add_control(
             'register_img',
             [
@@ -171,7 +171,7 @@ class Homeo_Elementor_User_Info extends Elementor\Widget_Base {
             $user_id = get_current_user_id();
             $userdata = get_userdata($user_id);
             $user_name = $userdata->display_name;
-            
+
             $menu_nav = 'user-menu';
 
             if ( WP_RealEstate_User::is_agency($user_id) ) {
@@ -198,7 +198,7 @@ class Homeo_Elementor_User_Info extends Elementor\Widget_Base {
                                 echo homeo_get_avatar($user_id, 54);
                             } ?>
                         </div>
-                        <div class="name-acount"><?php echo esc_html($user_name); ?> 
+                        <div class="name-acount"><?php echo esc_html($user_name); ?>
                             <?php if ( !empty($menu_nav) && has_nav_menu( $menu_nav ) ) { ?>
                                 <i class="fa fa-caret-down" aria-hidden="true"></i>
                             <?php } ?>
@@ -232,11 +232,7 @@ class Homeo_Elementor_User_Info extends Elementor\Widget_Base {
                         <?php esc_html_e('Login', 'homeo'); ?>
                     </a>
 
-                    <span class="space text-link"> / </span>
-
-                    <a class="btn-login register apus-user-register" href="#apus_register_form" title="<?php esc_attr_e('Register','homeo'); ?>">
-                        <?php esc_html_e('Register', 'homeo'); ?>
-                    </a>
+                  
 
                     <div id="apus_login_forgot_form" class="apus_login_register_form mfp-hide" data-effect="fadeIn">
                         <div class="form-login-register-inner">
@@ -285,7 +281,7 @@ class Homeo_Elementor_User_Info extends Elementor\Widget_Base {
                             </div>
                         </div>
                     </div>
-                    
+
                 <?php } ?>
             </div>
         <?php }

@@ -2,7 +2,7 @@
     Widget
 \*------------------------------------*/
 .widget{
-    label{  
+    label{
         font-weight: $font-weight-base;
     }
     // widget image
@@ -22,7 +22,7 @@
             margin: $theme-margin / 2 0;
             height: auto;
         }
-    }  
+    }
     &.widget_rss{
         .widget-title{
             background: none;
@@ -58,7 +58,7 @@
                 padding: 15px;
                 overflow: hidden;
                 a img{
-                    float: left; 
+                    float: left;
                     @include rtl-margin-right(10px);
                 }
              }
@@ -84,7 +84,7 @@
             &.clear-all{
                 margin-bottom: 20px;
                 @include rtl-margin-left(15px);
-            } 
+            }
             &.compare{
                 margin-bottom: 20px;
                 @include rtl-margin-right(15px);
@@ -248,7 +248,7 @@
             }
         }
     }
-} 
+}
 /*------------------------------------*\
     Widget Contact Us
 \*------------------------------------*/
@@ -300,7 +300,7 @@
             line-height: $widget-sidebar-entry-title-line-height;
             font-weight: $widget-sidebar-entry-title-font-weight;
             @include font-size(font-size,$widget-sidebar-entry-title-font-size);
-            height: 40px; 
+            height: 40px;
             overflow: hidden;
             font-family: $font-family-base;
         }
@@ -346,7 +346,7 @@
         &:hover,&:active{
             color:darken($brand-danger,10%);
         }
-    }    
+    }
     .select2-container .select2-selection--single{
         background:#fff;
         height: 48px;
@@ -382,8 +382,8 @@
                 @include rtl-margin-left(5px);
             }
             &.st_small{
-               padding-left:15px; 
-               padding-right:15px; 
+               padding-left:15px;
+               padding-right:15px;
             }
         }
         .form-control{
@@ -707,7 +707,7 @@
 }
 
 /*-----------------------------*\
-        Widget Contact 
+        Widget Contact
 \*-----------------------------*/
 .widget-infor{
     .heding{
@@ -794,7 +794,7 @@
             }
         }
         .product-block {
-            padding: 0!important;           
+            padding: 0!important;
             overflow: hidden;
             display: block;
         }
@@ -837,7 +837,7 @@
         }
     }
     &.menu-left{
-        .dropdown-menu{ 
+        .dropdown-menu{
             @include rtl-left(100%!important);
             @include rtl-right(auto !important);
         }
@@ -852,7 +852,7 @@
     .icon-ver{
         @include rtl-margin-right(10px);
     }
-}    
+}
 //Widget default
 #recentcomments{
     > li{
@@ -1076,7 +1076,7 @@
             border:none;
             margin: 0;
         }
-        
+
     }
     &.style-style2{
         border:1px solid $border-color;
@@ -1358,7 +1358,7 @@
     }
     .modal-content{
         @include border-radius(0);
-        padding:260px 60px 40px; 
+        padding:260px 60px 40px;
         text-align: center;
         h3{
             font-size:20px;
@@ -1732,15 +1732,13 @@
     }
   }
 }
-.wrapper-social-login{
 
-}
 .inner-social{
     > div{
         margin-bottom: 20px;
         text-align: center;
         a{
-            display:inline-block;
+            display: none !important;
             width: 100%;
             padding:12px 30px;
             @include border-radius($border-radius-base);
